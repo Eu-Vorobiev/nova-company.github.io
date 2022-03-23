@@ -1,0 +1,148 @@
+.about-us {
+  padding-bottom: 180px;
+  padding-top: 95px;
+
+  @media (max-width: 991px) {
+    padding-bottom: 150px;
+  }
+
+  @media (max-width: 840px) {
+    padding-bottom: 200px;
+    padding-top: 170px;
+  }
+
+  @media screen and (max-width: 575px) {
+    padding-bottom: 120px;
+  }
+
+  @media screen and (max-width: 420px) {
+    padding-bottom: 90px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+
+    @media (max-width: 840px) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    margin-top: -32px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 44%;
+    color: $white;
+    position: relative;
+
+    @media (max-width: 840px) {
+      margin-top: 0;
+      flex: 1 1 100%;
+      align-items: center;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -90px;
+      left: -2px;
+      width: 116px;
+      height: 180px;
+      background-image: url("../img/fire.png");
+      background-size: 116px 180px;
+      background-position: left center;
+      background-repeat: no-repeat;
+      animation: hueRotate 2s linear infinite;
+
+      @media (max-width: 840px) {
+        top: -100px;
+        left: 38%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    padding-left: 66px;
+    position: relative;
+    z-index: 2;
+
+    b {
+      display: block;
+    }
+  }
+
+  p {
+    max-width: 520px;
+    font-size: 15px;
+    line-height: 133%;
+
+    @media (max-width: 840px) {
+      max-width: 90%;
+      text-align: center;
+    }
+  }
+
+  &__picture {
+    flex: 1 1 45%;
+
+    @media (max-width: 840px) {
+      max-width: 60%;
+      min-width: 280px;
+      order: 1;
+    }
+
+    img {
+      border-radius: 5px;
+    }
+  }
+
+  &__list {
+    margin-top: 37px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    @media (max-width: 840px) {
+      margin-top: 20px;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    a {
+      font-family: $secondary-font;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 14px;
+      text-transform: uppercase;
+      color: $white;
+
+      &:hover,
+      &:focus {
+        color: $red;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: -168px;
+
+    @media (max-width: 991px) {
+      margin-top: 0px;
+    }
+
+    @media (max-width: 840px) {
+      align-self: center;
+    }
+  }
+
+}

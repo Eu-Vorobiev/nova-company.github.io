@@ -1,0 +1,22 @@
+.btn {
+  padding: 10px;
+  min-width: 176px;
+  background: $red;
+  box-shadow: 0px 2px 10px transparent;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: $secondary-font;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 5px 30px rgba($red, .7);
+  }
+}

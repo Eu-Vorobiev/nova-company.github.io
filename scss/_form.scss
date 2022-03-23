@@ -1,0 +1,58 @@
+.form {
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 475px) {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__label {
+    @media (max-width: 475px) {
+      width: 90%;
+    }
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    background: none;
+    min-width: 260px;
+    padding: 7px 48px 9px 20px;
+    border: 1px solid transparent;
+    background: $white;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+    color: $red;
+    transition: $transition;
+
+    &::placeholder {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 1;
+      color: $black;
+    }
+
+    &:hover,
+    &:focus {
+      background: rgba($white, .85);
+      border-color: lighten($red, 10%);
+    }
+
+    @media (max-width: 475px) {
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    width: 90%;
+
+    @media (min-width: 476px) {
+      width: auto;
+      margin-left: -40px;
+    }
+  }
+}

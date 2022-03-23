@@ -1,0 +1,52 @@
+.cta {
+  background: #601217;
+  padding: 70px 0;
+
+  @media (max-width: 768px) {
+    padding: 40px 0 60px;
+  }
+
+  &__container {
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px 60px;
+    color: $white;
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    flex: 0 1 370px;
+    text-align: right;
+
+    @media (max-width: 768px) {
+      align-items: center;
+      text-align: center;
+    }
+
+    @media (max-width: 475px) {
+      flex: 1 1 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__desc {
+    font-weight: normal;
+    font-size: clamp(13px, 4vw, 15px);
+    line-height: 133%;
+  }
+}

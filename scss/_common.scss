@@ -1,0 +1,242 @@
+.pentagon-bg {
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+    background: $black;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  }
+}
+
+.square-bg {
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+    background: $black;
+    width: 100%;
+    height: 110%;
+    z-index: 1;
+  }
+}
+
+// .triangle-bg {
+//   position: relative;
+//   z-index: 2;
+
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     top: 100%;
+//     left: -1%;
+//     right: 0;
+//     background: $black;
+//     width: 102%;
+//     height: 100%;
+//     z-index: 1;
+
+//     -webkit-clip-path: polygon(0 0, 100% 0, 50% 25%);
+//     clip-path: polygon(0 0, 100% 0, 50% 25%);
+//   }
+// }
+
+.slice-bg {
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 89%;
+    background-color: $black;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 76%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 76%, 0% 100%);
+  }
+
+  &--grey {
+    z-index: unset;
+
+    &::before {
+      top: 0;
+      height: 100%;
+      background-color: $dark;
+    }
+  }
+}
+
+.fire-bg {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url('../img/fire.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center 53%;
+    opacity: 0.3;
+    z-index: 0;
+  }
+
+  &--down {
+    &::after {
+      background-position: center bottom 5%;
+
+      @media screen and (max-width: 768px) {
+        background-size: 70%;
+        background-position: center bottom 0%;
+      }
+    }
+  }
+}
+
+.slider-btn {
+  background-image: url("../img/icons/arrow-right.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 24px;
+  cursor: pointer;
+  transition: $transition;
+  opacity: 0.7;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  &-prev {
+    left: 50px;
+    transform-origin: top left;
+    transform: rotate(180deg) translateY(-50%);
+  }
+
+  &-next {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px 65px;
+}
+
+.callback {
+  font-family: $main-font;
+  font-weight: bold;
+  font-size: clamp(18px, 4vw, 20px);
+  line-height: 1.2;
+  color: $white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &>img {
+    width: 57px;
+    height: 57px;
+  }
+
+  &--black {
+    color: $black;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    color: lighten($red, 10%);
+  }
+}
+
+.border-top {
+  border-top: 5px solid $black;
+}
+
+.scroll-up {
+  position: fixed;
+  top: calc(100vh - 230px);
+  right: calc((100% - 1100px) / 2 - 20px);
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  background: transparent;
+  border: 2px solid $white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .7s linear;
+
+  @media (max-width: 1200px) {
+    right: 20px;
+  }
+
+  @media (max-width: 768px) {
+    width: 55px;
+    height: 55px;
+  }
+
+  @media (max-width: 475px) {
+    width: 40px;
+    height: 40px;
+  }
+
+  &.shown {
+    opacity: .6;
+    visibility: visible;
+  }
+
+  path {
+    transition: $transition;
+  }
+
+  &:hover {
+    opacity: 1;
+    border-color: $red;
+
+    path {
+      fill: $red;
+    }
+  }
+}
+
+@keyframes hueRotate {
+  0% {
+    filter: hue-rotate(0);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}

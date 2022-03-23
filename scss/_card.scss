@@ -1,0 +1,126 @@
+.card {
+  padding: 30px;
+  margin-bottom: 60px;
+  min-height: 310px;
+  border-radius: 5px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+
+  @media (max-width: 840px) {
+    align-items: stretch;
+  }
+
+  @media (max-width: 575px) {
+    padding: 20px 10px;
+    margin-bottom: 50px;
+    min-height: 270px;
+  }
+
+  @media screen and (max-width: 420px) {
+    min-height: 240px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(to top, rgba($black, .5) 0%, rgba($black, .5) 100%);
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    min-height: 310px;
+
+    @media screen and (max-width: 575px) {
+      min-height: 270px;
+    }
+
+    @media screen and (max-width: 420px) {
+      min-height: 240px;
+    }
+
+    img {
+      flex-grow: 1;
+      border-radius: 5px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 5;
+    max-width: 1070px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    @media (max-width: 1024px) {
+      align-items: end;
+    }
+
+    @media (max-width: 840px) {
+      flex-direction: column;
+      align-items: normal;
+      justify-content: initial;
+    }
+  }
+
+  &__title {
+    flex: 1 0 49%;
+    max-width: 420px;
+    width: 100%;
+
+    @media (max-width: 840px) {
+      flex: 0 0 auto;
+      max-width: 95%;
+    }
+
+    @media (max-width: 575px) {
+      max-width: 100%;
+    }
+  }
+
+  &__contacts {
+    @media (max-width: 1100px) {
+      gap: 25px;
+    }
+
+    @media (max-width: 1024px) {
+      flex-direction: column-reverse;
+      align-items: end;
+      justify-content: end;
+      gap: 5px;
+    }
+
+    @media (max-width: 840px) {
+      margin-top: auto;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 575px) {
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+
+  &__callback {
+    @media (max-width: 420px) {
+      gap: 4px;
+    }
+  }
+}

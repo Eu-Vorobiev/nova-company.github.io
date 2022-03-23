@@ -1,0 +1,97 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  background: rgba($white, .9);
+  transition: $transition;
+  border-bottom: 1px solid transparent;
+
+  &.scrolled {
+    border-bottom: 1px solid $red;
+
+    .header__container {
+      padding-bottom: 5px;
+      padding-top: 5px;
+    }
+  }
+  &.border-bottom {
+    border-bottom: 1px solid $black;
+  }
+
+  &__container {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    transition: $transition;
+
+    @media screen and (max-width: 475px) {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+
+  &__logo {
+    max-width: 92px;
+
+    @media screen and (max-width: 475px) {
+      max-width: 75px;
+    }
+  }
+
+  .menu-btn {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 8px;
+    transition: $transition;
+
+    &:hover {
+      border-color: $red;
+
+      span {
+        background: $red;
+      }
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: translate(4px, -2px) rotate(45deg);
+        transform-origin: left top;
+      }
+
+      span:nth-child(2) {
+        transform: translateX(-20px);
+        background: transparent;
+      }
+
+      span:nth-child(3) {
+        transform: translate(-3px, -14px) rotate(-45deg);
+        transform-origin: right bottom;
+      }
+    }
+
+    span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: $black;
+      border-radius: 6px;
+      transition: $transition;
+    }
+
+    @media screen and (max-width: 768px) {
+      display: inline-flex;
+    }
+  }
+}
